@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "dependencies": {
+    "md5": "^2.2.1",
+    "text-encoding": "^0.6.1"
+  }
+}
