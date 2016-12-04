@@ -4,11 +4,18 @@ import Data.String.Base64 as Base64
 import Control.Monad.Eff.Exception (Error, error)
 import Data.Array (catMaybes, mapWithIndex)
 import Data.Either (Either(..))
+import Data.Eq (class Eq)
 import Data.Maybe (Maybe(..))
+import Data.Show (class Show)
 import Data.String (Pattern(..), split, fromCharArray, toCharArray)
-import Prelude (mod, ($), (<$>), (==), (>>>))
+import Prelude (mod, show, ($), (<$>), (==), (>>>))
 
 newtype DecodedSave = DecodedSave String
+
+instance showDecodedSave :: Show DecodedSave where
+  show (DecodedSave s) = show s
+
+derive instance eqDecodedSave :: Eq DecodedSave
 
 antiCheatCode :: Pattern
 antiCheatCode = Pattern "Fe12NAfA3R6z4k0z"
