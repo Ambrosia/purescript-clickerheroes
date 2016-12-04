@@ -1,6 +1,7 @@
 {
   "private": true,
   "dependencies": {
+    "decimal.js": "^7.1.0",
     "md5": "^2.2.1",
     "text-encoding": "^0.6.1"
   }
