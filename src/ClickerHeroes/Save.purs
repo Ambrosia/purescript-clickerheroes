@@ -1,4 +1,4 @@
-module ClickerHeroes.Save where
+module ClickerHeroes.Save (DecodedSave(..), decode) where
 
 import Data.String.Base64 as Base64
 import Control.Monad.Eff.Exception (Error, error)
