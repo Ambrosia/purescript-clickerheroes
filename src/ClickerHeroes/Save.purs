@@ -13,6 +13,7 @@ newtype DecodedSave = DecodedSave String
 antiCheatCode :: Pattern
 antiCheatCode = Pattern "Fe12NAfA3R6z4k0z"
 
+-- | Decodes a Clicker Heroes save. The result is a JSON string.
 decode :: String -> Either Error DecodedSave
 decode save = case split antiCheatCode save of
   [data'] -> DecodedSave <$> Base64.decode data'
