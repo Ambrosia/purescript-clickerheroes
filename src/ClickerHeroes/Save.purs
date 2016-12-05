@@ -8,14 +8,12 @@ import Data.Eq (class Eq)
 import Data.Maybe (Maybe(..))
 import Data.Show (class Show)
 import Data.String (Pattern(..), split, fromCharArray, toCharArray)
-import Prelude (mod, show, ($), (<$>), (==), (>>>))
+import Prelude (mod, ($), (<$>), (==), (>>>))
 
 newtype DecodedSave = DecodedSave String
 
-instance showDecodedSave :: Show DecodedSave where
-  show (DecodedSave s) = show s
-
-derive instance eqDecodedSave :: Eq DecodedSave
+derive newtype instance showDecodedSave :: Show DecodedSave
+derive newtype instance eqDecodedSave :: Eq DecodedSave
 
 antiCheatCode :: Pattern
 antiCheatCode = Pattern "Fe12NAfA3R6z4k0z"
